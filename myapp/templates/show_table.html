@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2> Table for the number : {{num}} upto {{upto}}</h2>
+
+<table class="table">
+    {% for i in upto|get_range %}
+      <tr>
+        <td>{{num}}</td>
+        <td>X</td>
+        <td>{{i}}</td>
+        <td>=</td>
+        <td>{% widthratio num 1 i %}</td>
+      </tr>
+    {% endfor %}
+
+  </table>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h2> Hello World !! </h2>
+    <h4>First : {{first}}</h4>
+    <h4>Second : {{second}}</h4>
+
+    {% load static %}
+    <a href = "{% static 'abc.txt' %}">Click Here</a>
+
+    <form action="/generate/" method = "post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Enter the number</label>
+            <input type="number" name = "num" class="form-control" id="exampleFormControlInput1" placeholder="8">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter the number upto which you want to generate the table:</label>
+            <input type="number" name = "upto" class="form-control" id="exampleFormControlInput1" placeholder="8">
+        </div>
+        <input type = "submit" />
+    </form>
+{% endblock %}
